@@ -21,63 +21,28 @@
             font_size: 18
             color: 0, 0.62, 0.96
         Button:
-            text: 'Open Second Screen'
-            on_press: root.manager.current = 'second'
-        PlaceholderTextInput:
-            placeholder_text: "Type here..."
+            text: 'Add new task'
+            on_press: root.manager.current = 'addTask'
             size_hint_y: None
-            height: 300
+            height: 50
         ScrollView:
             # Adicionando um BoxLayout vertical dentro do ScrollView
             BoxLayout:
+                id: tasks
                 orientation: 'vertical'
                 size_hint_y: None
                 height: self.minimum_height 
-                # Adicionando alguns widgets (botões) ao BoxLayout
-                Button:
-                    text: 'Button 0'
-                    size_hint_y: None
-                    height: 40
 
-                Button:
-                    text: 'Button 1'
-                    size_hint_y: None
-                    height: 40
 
-                Button:
-                    text: 'Button 2'
-                    size_hint_y: None
-                    height: 40
-                Button:
-                    text: 'Button 2'
-                    size_hint_y: None
-                    height: 40
-                Button:
-                    text: 'Button 2'
-                    size_hint_y: None
-                    height: 40
-                Button:
-                    text: 'Button 2'
-                    size_hint_y: None
-                    height: 40
-                Button:
-                    text: 'Button 2'
-                    size_hint_y: None
-                    height: 40
-                Button:
-                    text: 'Button 2'
-                    size_hint_y: None
-                    height: 40
-                Button:
-                    text: 'Button 2'
-                    size_hint_y: None
-                    height: 40
-
-<SecondScreen>:
+<addTaskScreen>:
     BoxLayout:
         orientation: 'vertical'
-        Label:
-            text: 'This is the Second Screen'
+        PlaceholderTextInput:
+            placeholder_text: "Title..."
+            size_hint_y: None
+            height: 300
+        PlaceholderTextInput:
+            placeholder_text: "Type here..."
         Button:
             text: 'Back to Home Screen'
             on_press: root.manager.current = 'home'
