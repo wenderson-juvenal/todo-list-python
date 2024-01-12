@@ -1,0 +1,83 @@
+
+<PlaceholderTextInput@TextInput>:
+    placeholder_text: ""
+
+    hint_text: self.placeholder_text if not self.focus else ''
+    foreground_color: (0, 0, 0, 1) if self.focus else (0.5, 0.5, 0.5, 1)
+
+<HomeScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        canvas.before:
+            Color:
+                rgba: 0.7, 0.9, 1, 1  # Define a cor de fundo (neste caso, um cinza claro)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            text: "To Do List"
+            size_hint_y: 0.5
+            padding: 10
+            font_size: 18
+            color: 0, 0.62, 0.96
+        Button:
+            text: 'Open Second Screen'
+            on_press: root.manager.current = 'second'
+        PlaceholderTextInput:
+            placeholder_text: "Type here..."
+            size_hint_y: None
+            height: 300
+        ScrollView:
+            # Adicionando um BoxLayout vertical dentro do ScrollView
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height 
+                # Adicionando alguns widgets (botões) ao BoxLayout
+                Button:
+                    text: 'Button 0'
+                    size_hint_y: None
+                    height: 40
+
+                Button:
+                    text: 'Button 1'
+                    size_hint_y: None
+                    height: 40
+
+                Button:
+                    text: 'Button 2'
+                    size_hint_y: None
+                    height: 40
+                Button:
+                    text: 'Button 2'
+                    size_hint_y: None
+                    height: 40
+                Button:
+                    text: 'Button 2'
+                    size_hint_y: None
+                    height: 40
+                Button:
+                    text: 'Button 2'
+                    size_hint_y: None
+                    height: 40
+                Button:
+                    text: 'Button 2'
+                    size_hint_y: None
+                    height: 40
+                Button:
+                    text: 'Button 2'
+                    size_hint_y: None
+                    height: 40
+                Button:
+                    text: 'Button 2'
+                    size_hint_y: None
+                    height: 40
+
+<SecondScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'This is the Second Screen'
+        Button:
+            text: 'Back to Home Screen'
+            on_press: root.manager.current = 'home'
